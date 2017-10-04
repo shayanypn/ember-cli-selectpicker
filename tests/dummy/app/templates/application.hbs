@@ -1,0 +1,118 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 texet-center">
+			<h1>bootstrap selectpicker</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Simple</div>
+				<div class="panel-body">
+					{{#select-picker }}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">Select boxes with optgroups</div>
+				<div class="panel-body">
+					{{#select-picker}}
+						<optgroup label="Picnic">
+							<option>Mustard</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</optgroup>
+						<optgroup label="Camping">
+							<option>Tent</option>
+							<option>Flashlight</option>
+							<option>Toilet Paper</option>
+						</optgroup>
+					{{/select-picker}}
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Multiple select boxes</div>
+				<div class="panel-body">
+					{{#select-picker
+						multiple=true
+						}}
+						<optgroup label="Picnic">
+							<option>Mustard</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</optgroup>
+						<optgroup label="Camping">
+							<option>Tent</option>
+							<option>Flashlight</option>
+							<option>Toilet Paper</option>
+						</optgroup>
+					{{/select-picker}}
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Live Search</div>
+				<div class="panel-body">
+					{{#select-picker
+						search=true
+						}}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Limit the number of selections</div>
+				<div class="panel-body">
+					{{#select-picker
+						multiple=true
+						maxOptions=2
+						}}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Limit the number of selections</div>
+				<div class="panel-body">
+					{{#select-picker
+						multiple=true
+						maxOptions=2
+						title="Choose one of the following..."
+						}}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{{outlet}}

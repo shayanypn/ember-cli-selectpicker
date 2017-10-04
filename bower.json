@@ -1,0 +1,28 @@
+{
+  "name": "ember-cli-selectpicker",
+  "description": "Ember cli selectpicker that inspire from bootstrap selectpicker",
+  "main": "index.js",
+  "authors": [
+    "shayanypn <shayanypn@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ember-addon",
+    "ember-cli",
+    "selectpicker",
+    "bootstrap-selectpicker",
+    "ember-selectpicker"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-select": "^1.12.4",
+    "bootstrap": "^3.3.7"
+  }
+}
