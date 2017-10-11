@@ -5,7 +5,7 @@
 			<h1>bootstrap selectpicker</h1>
 		</div>
 	</div>
-	<div class="row">
+{{!-- 	<div class="row">
 		<div class="col-sm-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">Simple</div>
@@ -112,6 +112,61 @@
 			</div>
 
 		</div>
+	</div> --}}
+	
+	<div class="row"><div class="col-md-12"><hr></div></div>
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Dynamic Value</div>
+				<div class="panel-body">
+					{{select-picker
+						data=data
+						}}
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">Dynamic Value</div>
+				<div class="panel-body">
+					{{select-picker
+						multiple=true
+						search=true
+						data=data
+						}}
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">Dynamic Add Data</div>
+				<div class="panel-body">
+					{{select-picker
+						data=dataDynamic
+						value="Tent"
+						title="Choose one of the following..."
+						}}
+					<div class="clearfix"></div>
+					<button {{action 'onInitialData' }} class="btn btn-primary">Import</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Dynamic Select</div>
+				<div class="panel-body">
+					{{select-picker
+						showTick=true
+						data=data
+						maxOptions=2
+						maxOptionsText="Too musch selection"
+						value=itemValue
+						}}
+					<div class="clearfix"></div>
+					<button class="btn btn-primary" {{action "onItemValue" "Mustard" }}>Mustard</button>
+					<button class="btn btn-primary" {{action "onItemValue" "Ketchup" }}>Ketchup</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
 	</div>
 </div>
 

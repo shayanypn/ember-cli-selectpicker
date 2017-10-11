@@ -1,1 +1,7 @@
 {{yield}}
+{{hasData}}
+{{#if hasData}}
+	{{#each selectData as |option|}}
+		<option value={{option}}>{{option}}</option>
+	{{/each}}
+{{/if}}
