@@ -5,8 +5,41 @@
 			<h1>bootstrap selectpicker</h1>
 		</div>
 	</div>
-{{!-- 	<div class="row">
+	<div class="row">
 		<div class="col-sm-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Simple</div>
+				<div class="panel-body">
+					{{#select-picker
+						enable=false
+						}}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Simple</div>
+				<div class="panel-body">
+					{{#select-picker
+						enable=false
+						className="form-control"
+						}}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+
 			<div class="panel panel-default">
 				<div class="panel-heading">Simple</div>
 				<div class="panel-body">
@@ -21,6 +54,10 @@
 				</div>
 			</div>
 			
+
+
+		</div>
+		<div class="col-sm-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">Select boxes with optgroups</div>
 				<div class="panel-body">
@@ -38,7 +75,23 @@
 					{{/select-picker}}
 				</div>
 			</div>
-
+			<div class="panel panel-default">
+				<div class="panel-heading">Live Search</div>
+				<div class="panel-body">
+					{{#select-picker
+						search=true
+						}}
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Relish</option>
+						<option>Tent</option>
+						<option>Flashlight</option>
+						<option>Toilet Paper</option>
+					{{/select-picker}}
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">Multiple select boxes</div>
 				<div class="panel-body">
@@ -58,24 +111,6 @@
 					{{/select-picker}}
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-4">
-			<div class="panel panel-default">
-				<div class="panel-heading">Live Search</div>
-				<div class="panel-body">
-					{{#select-picker
-						search=true
-						}}
-						<option>Mustard</option>
-						<option>Ketchup</option>
-						<option>Relish</option>
-						<option>Tent</option>
-						<option>Flashlight</option>
-						<option>Toilet Paper</option>
-					{{/select-picker}}
-				</div>
-			</div>
-
 			<div class="panel panel-default">
 				<div class="panel-heading">Limit the number of selections</div>
 				<div class="panel-body">
@@ -92,7 +127,6 @@
 					{{/select-picker}}
 				</div>
 			</div>
-
 			<div class="panel panel-default">
 				<div class="panel-heading">Limit the number of selections</div>
 				<div class="panel-body">
@@ -110,9 +144,8 @@
 					{{/select-picker}}
 				</div>
 			</div>
-
 		</div>
-	</div> --}}
+	</div>
 	
 	<div class="row"><div class="col-md-12"><hr></div></div>
 

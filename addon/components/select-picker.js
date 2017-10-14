@@ -29,7 +29,17 @@ export default Ember.Component.extend({
 	}),
 	itemTitle: Ember.computed.oneWay('title'),
 
-	itemClass: 'selectpicker',
+	isEnable: Ember.computed('enable', function(){
+		let enable = Ember.get(this, 'enable');
+		return (typeof enable === 'undefined') ? true : enable;
+	}),
+
+	itemClass: Ember.computed('className', 'isEnable', function(){
+		let enable = Ember.get(this, 'isEnable'),
+		className = Ember.get(this, 'className');
+
+		return enable?`selectpicker ${className}`:`${className}`;
+	}),
 
 	hasData: Ember.computed.alias('data.length'),
 
@@ -82,22 +92,27 @@ export default Ember.Component.extend({
 	// },
 
 	didRender() {
-		console.log('didRender');
+		// console.log('didRender');
+		let enable = Ember.get(this, 'isEnable');
 
-		Ember.$(`#${this.elementId}`).selectpicker('refresh');
+		if (enable) {
+			Ember.$(`#${this.elementId}`).selectpicker('refresh');
 
-
-		if ( Ember.get(this,'value')) {
-			Ember.$(`#${this.elementId}`).selectpicker('val', this.get('value'));
-		};
+			if ( Ember.get(this,'value')) {
+				Ember.$(`#${this.elementId}`).selectpicker('val', this.get('value'));
+			};
+		}
 	},
 
 	didInsertElement(){
-		console.log('didInsertElement');
+		// console.log('didInsertElement');
 
-		let options =  Ember.get(this, '_options');
+		let options =  Ember.get(this, '_options'),
+		enable = Ember.get(this, 'isEnable');
 
-		Ember.$(`#${this.elementId}`).selectpicker(options);
+		if (enable) {
+			Ember.$(`#${this.elementId}`).selectpicker(options);
+		}
 	},
 
 	// didUpdate() {
