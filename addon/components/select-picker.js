@@ -51,61 +51,45 @@ export default Ember.Component.extend({
 	_options: Ember.computed('maxOptions','maxOptionsText','title','showTick', function(){
 		let options = {};
 
-		
 		if (Ember.get(this,'maxOptionsText')) {
 			options['maxOptionsText'] = Ember.get(this,'maxOptionsText');
-		};
+		}
 		
 		if (Ember.get(this,'showTick')) {
 			options['showTick'] = Ember.get(this,'showTick');
-		};
+		}
 
 		if (Ember.get(this,'maxOptions')) {
 			options['maxOptions'] = Ember.get(this,'maxOptions');
-		};
+		}
 
 		if (Ember.get(this,'title')) {
 			options['title'] = Ember.get(this,'title');
-		};
+		}
 
 		return options;
 	}),
 
 	init() {
 		this._super(...arguments);
+
+		this.addObserver('value.[]', this, this.didRender);
 	},
 
-	// didUpdateAttrs() {
-	// 	console.log('didUpdateAttrs');
-	// },
-
-	// willUpdate() {
-	// 	console.log('willUpdate');
-	// },
-
-	// didReceiveAttrs() {
-	// 	console.log('didReceiveAttrs');
-	// },
-	
-	// willRender() {
-	// 	console.log('willRender');
-	// },
-
 	didRender() {
-		// console.log('didRender');
 		let enable = Ember.get(this, 'isEnable');
 
 		if (enable) {
 			Ember.$(`#${this.elementId}`).selectpicker('refresh');
 
-			if ( Ember.get(this,'value')) {
-				Ember.$(`#${this.elementId}`).selectpicker('val', this.get('value'));
-			};
+			let value = Ember.get(this,'value');
+			if (value) {
+				Ember.$(`#${this.elementId}`).selectpicker('val', value);
+			}
 		}
 	},
 
 	didInsertElement(){
-		// console.log('didInsertElement');
 
 		let options =  Ember.get(this, '_options'),
 		enable = Ember.get(this, 'isEnable');
@@ -115,8 +99,7 @@ export default Ember.Component.extend({
 		}
 	},
 
-	// didUpdate() {
-	// 	console.log('didUpdate');
-	// },
-
+	willDestroy() {
+		this.removeObserver('value.[]', this, this.didRender);
+	}
 });

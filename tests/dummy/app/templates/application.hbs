@@ -199,7 +199,22 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Dynamic Select</div>
+				<div class="panel-body">
+					{{select-picker
+						multiple=true
+						showTick=true
+						data=data
+						value=itemValues
+						}}
+					<div class="cleearfix"></div>
+					<button class="btn btn-primary" {{action "onItemValues" "Mustard" }}>Mustard</button>
+					<button class="btn btn-primary" {{action "onItemValues" "Relish" }}>Relish</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
